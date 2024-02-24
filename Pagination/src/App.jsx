@@ -37,20 +37,6 @@ function App() {
   return (
     <>
       <div>
-        {products.length > 0 && (
-          <div className="products">
-            {/* iterating the each page with total 10 items per page */}
-            {products.map((products) => {
-              return (
-                <span className="products__single" key={products.id}>
-                  <img src={products.thumbnail} alt={products.title} />
-                  <span>{products.title}</span>
-                </span>
-              );
-            })}
-          </div>
-        )}
-
         {/* adding the page number section */}
         {products.length > 0 && (
           <div className="pagination">
@@ -80,6 +66,19 @@ function App() {
             >
               ▶
             </span>
+          </div>
+        )}
+        {products.length > 0 && (
+          <div className="products">
+            {/* iterating the each page with total 10 items per page */}
+            {products.map((products) => {
+              return (
+                <span className="products__single" key={products.id}>
+                  <img src={products.thumbnail} alt={products.title} />
+                  <span>{products.title}</span>
+                </span>
+              );
+            })}
           </div>
         )}
       </div>
